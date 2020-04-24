@@ -21,7 +21,7 @@ export const CardList: React.FC = () => {
           >
             <CardItem>
               <img
-                src={!!job.company_logo ? job.company_logo : logoDefault}
+                src={job?.company_logo || logoDefault}
                 alt="logo"
                 onError={addDefaultSrc}
               />

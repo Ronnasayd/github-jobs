@@ -4,10 +4,6 @@ const api = axios.create({
   baseURL: "https://jobs.github.com/positions.json",
 });
 export const getCards = (description: string = "", location: string = "") => {
-  if (!!description && !!location) {
-    return api.get(`/?description=${description}&location=${location}`);
-  } else {
-    return api.get("/");
-  }
+  return api.get("/", { params: { description, location } });
 };
 export default api;

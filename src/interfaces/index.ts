@@ -9,7 +9,7 @@ export interface IJob {
   title: string;
   description: string;
   how_to_apply: string;
-  company_logo: string;
+  company_logo: string | null;
 }
 export interface IState {
   jobs: IJob[];

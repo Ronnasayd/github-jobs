@@ -1,23 +1,22 @@
 import { reducer } from "./duck";
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
-//@ts-ignore
+
 import Reactotron from "../config";
 import rootSaga from "./sagas";
 
-//@ts-ignore
-const sagaMonitor = Reactotron.createSagaMonitor();
-const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
-
 let composer;
+let sagaMiddleware;
 
 if (process.env.NODE_ENV === "development") {
+  const sagaMonitor = Reactotron?.createSagaMonitor!();
+  sagaMiddleware = createSagaMiddleware({ sagaMonitor });
   composer = compose(
     applyMiddleware(sagaMiddleware),
-    //@ts-ignore
-    Reactotron.createEnhancer()
+    Reactotron?.createEnhancer!()
   );
 } else {
+  sagaMiddleware = createSagaMiddleware();
   composer = compose(applyMiddleware(sagaMiddleware));
 }
 

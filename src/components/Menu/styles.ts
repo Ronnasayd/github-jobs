@@ -35,7 +35,7 @@ export const SearchButton = styled.button`
   background: transparent;
   border: 2px solid #00c86f;
   padding: 0px 20px;
-  color: #00c86f;
+  color: rgba(255, 255, 255, 0.87);
   height: 40px;
   width: 100px;
   border-radius: 4px;
