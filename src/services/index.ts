@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://jobs.github.com/positions.json",
+  baseURL: "https://github-jobs-proxy.appspot.com/positions",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 export const getCards = (description: string = "", location: string = "") => {
   return api.get("/", { params: { description, location } });
