@@ -27,8 +27,10 @@ export const CardItem = styled.li`
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   &:hover {
-    box-shadow: 0px 0px 13px #00c86f;
-    border: 2px solid #00c86f;
+    box-shadow: 0px 0px 5px rgb(0, 200, 111, 1),
+      0px 0px 10px rgb(0, 200, 111, 0.75), 0px 0px 15px rgb(0, 200, 111, 0.5),
+      0px 0px 20px rgb(0, 200, 111, 0.25);
+    border: 2px solid #7cffc5;
   }
   img {
     margin: 10px;
